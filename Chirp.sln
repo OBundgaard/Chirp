@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{968B1151-25BD-4301-93A2-C1E763DE64E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{968B1151-25BD-4301-93A2-C1E763DE64E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{CA5EDAA1-BD23-4E86-8F71-1DD76B2D757F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{CA5EDAA1-BD23-4E86-8F71-1DD76B2D757F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetPostingService", "TweetPostingService\TweetPostingService.csproj", "{0A41473F-26FD-4DA1-BC0B-08713F6DDDD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetPostingService", "TweetPostingService\TweetPostingService.csproj", "{0A41473F-26FD-4DA1-BC0B-08713F6DDDD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserProfileService", "UserProfileService\UserProfileService.csproj", "{479D4DDC-39C0-4ECD-B059-5BDC5C6FEE04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserProfileService", "UserProfileService\UserProfileService.csproj", "{479D4DDC-39C0-4ECD-B059-5BDC5C6FEE04}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BDC40854-E77C-40CF-AE7D-0E3BBDC70C12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{479D4DDC-39C0-4ECD-B059-5BDC5C6FEE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479D4DDC-39C0-4ECD-B059-5BDC5C6FEE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479D4DDC-39C0-4ECD-B059-5BDC5C6FEE04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC40854-E77C-40CF-AE7D-0E3BBDC70C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC40854-E77C-40CF-AE7D-0E3BBDC70C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC40854-E77C-40CF-AE7D-0E3BBDC70C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC40854-E77C-40CF-AE7D-0E3BBDC70C12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

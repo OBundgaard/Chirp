@@ -1,12 +1,12 @@
-name: chirp
-
 services:
   api:
-    build: 
+    build:
       context: .
       dockerfile: API/Dockerfile
     ports:
-     - 5341:80
+      - "5000:5000"
+      - "5001:5001"
+
   client:
     build: 
       context: .
