@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TweetPostingService": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

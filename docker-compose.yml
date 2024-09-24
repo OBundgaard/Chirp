@@ -1,0 +1,27 @@
+name: chirp
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: API/Dockerfile
+    ports:
+     - 5341:80
+  client:
+    build: 
+      context: .
+      dockerfile: Client/Dockerfile
+    depends_on:
+      - api
+  tweet-posting:
+    build: 
+      context: .
+      dockerfile: TweetPostingService/Dockerfile
+    depends_on:
+      - api
+  user-profile:
+    build:
+      context: .
+      dockerfile: UserProfileService/Dockerfile
+    depends_on:
+      - api
