@@ -18,6 +18,15 @@ public class TweetDbContext : DbContext
         modelBuilder.Entity<Tweet>().Property(t => t.TweetID).ValueGeneratedNever();
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            var connectionString = "Server=tweet-database,1433;Database=TweetDatabase;User Id=sa;Password=iLuvTweets4ever<3;TrustServerCertificate=True";
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         try

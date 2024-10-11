@@ -24,6 +24,15 @@ public class UserDbContext : DbContext
         modelBuilder.Entity<UserStatistic>().Property(s => s.UserID).ValueGeneratedNever();
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            var connectionString = "Server=user-database,1434;Database=UserDatabase;User Id=sa;Password=iLuvUsers4ever<3;TrustServerCertificate=True";
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         try
