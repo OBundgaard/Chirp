@@ -15,7 +15,7 @@ public class TweetDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Tweet>().HasKey(t => t.TweetID);
-        modelBuilder.Entity<Tweet>().Property(t => t.TweetID).ValueGeneratedNever();
+        modelBuilder.Entity<Tweet>().Property(t => t.TweetID).ValueGeneratedOnAdd();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

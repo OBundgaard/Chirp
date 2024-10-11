@@ -17,20 +17,11 @@ public class UserDbContext : DbContext
     {
         // Users
         modelBuilder.Entity<User>().HasKey(u => u.UserID);
-        modelBuilder.Entity<User>().Property(u => u.UserID).ValueGeneratedNever();
+        modelBuilder.Entity<User>().Property(u => u.UserID).ValueGeneratedOnAdd();
 
         // User statistics
         modelBuilder.Entity<UserStatistic>().HasKey(s => s.UserID);
         modelBuilder.Entity<UserStatistic>().Property(s => s.UserID).ValueGeneratedNever();
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            var connectionString = "Server=user-database,1434;Database=UserDatabase;User Id=sa;Password=iLuvUsers4ever<3;TrustServerCertificate=True";
-            optionsBuilder.UseSqlServer(connectionString);
-        }
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

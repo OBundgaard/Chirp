@@ -13,6 +13,8 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      - chirp-network
 
   client:
     build: 
@@ -20,6 +22,8 @@ services:
       dockerfile: Client/Dockerfile
     depends_on:
       - api
+    networks:
+      - chirp-network
 
   tweet-posting:
     build: 
@@ -28,6 +32,8 @@ services:
     depends_on:
       - api
       - tweet-database
+    networks:
+      - chirp-network
 
   tweet-database:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -35,9 +41,11 @@ services:
       SA_PASSWORD: iLuvTweets4ever<3
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "1401:1433"
     volumes:
-      - ./data:/var/opt/mssql/data
+      - ./data/tweetdb:/var/opt/mssql/data
+    networks:
+      - chirp-network
 
   user-profile:
     build:
@@ -46,6 +54,8 @@ services:
     depends_on:
       - api
       - user-database
+    networks:
+      - chirp-network
 
   user-database:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -53,6 +63,12 @@ services:
       SA_PASSWORD: iLuvUsers4ever<3
       ACCEPT_EULA: "Y"
     ports:
-      - "1434:1434"
+      - "1402:1433"
     volumes:
-      - ./data:/var/opt/mssql/data
+      - ./data/userdb:/var/opt/mssql/data
+    networks:
+      - chirp-network
+
+networks:
+  chirp-network:
+    driver: bridge
