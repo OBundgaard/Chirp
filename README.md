@@ -1,2 +1,1 @@
-### Architectural Diagram
-[[Diagram/ArchitecturalDiagram.png]]
+![Architectural Diagram](Diagram/ArchitecturalDiagram.png)
