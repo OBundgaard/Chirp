@@ -27,7 +27,7 @@ public class Program
         Console.WriteLine("DB Context created for User Service");
     }
 
-    public static async Task AddUser(string username, string displayName)
+    public static async Task<bool> AddUser(string username, string displayName)
     {
         if (username.IsNullOrEmpty() || displayName.IsNullOrEmpty())
             throw new ArgumentException("Arguments empty or is not provided");
@@ -36,14 +36,15 @@ public class Program
         User user = new User { Username = username, DisplayName = displayName };
 
 
-        if (_context != null)
-        {
-            _context.Users.Add(user);
+        if (_context == null)
+            return false;
 
-            await _context.SaveChangesAsync();
-        }
-
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+        
         Console.WriteLine($"Added '{user.Username}' with display name '{user.DisplayName}' to the database");
+
+        return true;
     }
 
     public static async Task<User?> GetUser(int userID)
@@ -57,21 +58,23 @@ public class Program
         return await _context.Users.FirstOrDefaultAsync(u => u.UserID == userID);
     }
 
-    public static async Task DeleteUser(int userID)
+    public static async Task<bool> DeleteUser(int userID)
     {
         if (_context == null)
-            return;
+            return false;
 
         User? user = await _context.Users.FirstOrDefaultAsync(u => u.UserID == userID);
         if (user == null)
         {
             Console.WriteLine("User does not exist");
-            return;
+            return false;
         }
 
         _context.Users.Remove(user);
         await _context.SaveChangesAsync();
 
         Console.WriteLine("User deleted successfully");
+
+        return true;
     }
 }
