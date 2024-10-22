@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserProfileService", "UserP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserServiceTesting", "UserServiceTesting\UserServiceTesting.csproj", "{034862EC-F552-44E2-8339-3B0BE3BCA7FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetServiceTesting", "TweetServiceTesting\TweetServiceTesting.csproj", "{DDABFA06-487E-40B3-B011-4F69F1993785}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{034862EC-F552-44E2-8339-3B0BE3BCA7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034862EC-F552-44E2-8339-3B0BE3BCA7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034862EC-F552-44E2-8339-3B0BE3BCA7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDABFA06-487E-40B3-B011-4F69F1993785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDABFA06-487E-40B3-B011-4F69F1993785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDABFA06-487E-40B3-B011-4F69F1993785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDABFA06-487E-40B3-B011-4F69F1993785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
