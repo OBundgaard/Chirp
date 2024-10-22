@@ -1,2 +1,2 @@
 ### Architectural Diagram
-[[/Diagram/ArchitecturalDiagram.png]]
+[[Diagram/ArchitecturalDiagram.png]]
