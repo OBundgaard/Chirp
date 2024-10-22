@@ -25,7 +25,7 @@ public class Program
         Console.WriteLine("DB Context created for Tweet Service");
     }
 
-    public static async Task PostTweet(int authorID, string tweetContent)
+    public static async Task<bool> PostTweet(int authorID, string tweetContent)
     {
         if (tweetContent.IsNullOrEmpty())
             throw new ArgumentException("Tweet content is empty or is not provided");
@@ -43,6 +43,8 @@ public class Program
         }
 
         Console.WriteLine($"Added tweet '{tweet.Content}' with ID '{tweet.AuthorID}' to the database");
+        return true;
+
     }
 
     public static async Task<List<Tweet>> GetTweetsByTweetID(int tweetID)
