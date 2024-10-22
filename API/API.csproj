@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\TweetPostingService\TweetPostingService.csproj" />
+    <ProjectReference Include="..\UserProfileService\UserProfileService.csproj" />
   </ItemGroup>
 
 </Project>

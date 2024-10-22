@@ -10,16 +10,21 @@ public class UserDbContext : DbContext
 
     public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
     {
-        Database.EnsureCreated();
+        try
+        {
+            Database.EnsureCreated();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("An error occurred while ensuring the database is created.", ex);
+        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Users
         modelBuilder.Entity<User>().HasKey(u => u.UserID);
         modelBuilder.Entity<User>().Property(u => u.UserID).ValueGeneratedOnAdd();
 
-        // User statistics
         modelBuilder.Entity<UserStatistic>().HasKey(s => s.UserID);
         modelBuilder.Entity<UserStatistic>().Property(s => s.UserID).ValueGeneratedNever();
     }

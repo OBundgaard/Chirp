@@ -9,7 +9,7 @@ public class Program
     static async Task Main(string[] args)
     {
         // Set up the DB context
-        //SetupContext();
+        SetupContext();
     }
 
     private static void SetupContext()
